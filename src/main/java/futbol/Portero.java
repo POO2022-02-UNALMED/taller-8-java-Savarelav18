@@ -1,6 +1,6 @@
 package futbol;
 
-public class Portero extends Futbolista{
+public class Portero extends Futbolista implements Comparable<Portero>{
 
     public short golesRecibidos;
     public byte dorsal;
@@ -17,10 +17,6 @@ public class Portero extends Futbolista{
         return true;
     }
 
-    public int compareTo(Portero portero){
-        return Math.abs(this.golesRecibidos-portero.golesRecibidos);
-    }
-
     @Override
     public String toString(){
         return "El futbolista"+this.getNombre()+
@@ -29,4 +25,9 @@ public class Portero extends Futbolista{
                 "con el dorsal"+this.dorsal+
                 ".Le han marcado"+this.golesRecibidos;
     }
+
+    public int compareTo(Portero o) {
+        return Math.abs(this.golesRecibidos-o.golesRecibidos);
+    }
+
 }
