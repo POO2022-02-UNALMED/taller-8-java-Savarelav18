@@ -25,7 +25,7 @@ public class Portero extends Futbolista implements Comparable<Portero>{
                 "con el dorsal"+this.dorsal+
                 ".Le han marcado"+this.golesRecibidos;
     }
-
+    @Override
     public int compareTo(Portero o) {
         return Math.abs(this.golesRecibidos-o.golesRecibidos);
     }
